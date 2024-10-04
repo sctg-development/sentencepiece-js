@@ -10,7 +10,7 @@ To rebuild this project
 
 yarn
 
-git clone https://github.com/google/sentencepiece.git
+git clone --recurse-submodules  https://github.com/sctg-development/sentencepiece-js.git
 
 yarn build
 
@@ -47,5 +47,5 @@ main()
 ## Note
 
 - devilyouwei updated this repo to make this module support the js `require` keyword and added the using example.
-
 - 2023-1-10, devilyouwei added `encodePieces`.
+- original author: https://github.com/JanKaul/sentencepiece

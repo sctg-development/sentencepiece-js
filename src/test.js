@@ -7,7 +7,7 @@ async function main() {
     let cleaned = cleanText(text);
 
     let spp = new SentencePieceProcessor();
-    await spp.load(`${ROOT}/test/30k-clean.model`)
+    await spp.load(`${ROOT}/test/llama-3.1-tokenizer.model`)
     let ids = spp.encodeIds(cleaned);
     console.log(ids)
     let str = spp.decodeIds(ids)

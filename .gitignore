@@ -3,3 +3,4 @@ dist/
 build/
 package-lock.json
 src/sentencepiece.js
+.DS_Store

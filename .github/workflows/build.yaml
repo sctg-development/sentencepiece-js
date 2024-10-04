@@ -28,5 +28,7 @@ jobs:
 
     - name: Build with Emscripten
       run: |
+        source ./emsdk/emsdk_env.sh
         npm install
         npm run build
+
