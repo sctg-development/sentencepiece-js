@@ -1,0 +1,50 @@
+{
+  "name": "sentencepiece-js",
+  "version": "1.1.0",
+  "description": "Sentencepiece tokenization for natural language processing, JS version.",
+  "main": "dist/index.js",
+  "exports": {
+    "imports": "./dist/index.js",
+    "default": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "./build.sh; npx rollup --config",
+    "test": "web-test-runner \"test/**/*.test.js\" \"src/**/*.test.js\" --node-resolve",
+    "test:watch": "web-test-runner \"test/**/*.test.js\" \"src/**/*.test.js\" --node-resolve --watch",
+    "develop": "web-dev-server --node-resolve --watch --open"
+  },
+  "files": [
+    "./dist/index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanKaul/sentencepiece.git"
+  },
+  "keywords": [
+    "machine_learning",
+    "albert",
+    "nlp",
+    "sentencepiece"
+  ],
+  "author": "devilyouwei, Jan Kaul",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/JanKaul/sentencepiece/issues"
+  },
+  "homepage": "https://github.com/devilyouwei/sentencepiece",
+  "devDependencies": {
+    "@esm-bundle/chai": "^4.3.4-fix.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@rollup/plugin-wasm": "^5.1.2",
+    "@web/dev-server": "^0.1.22",
+    "@web/test-runner": "^0.13.16",
+    "rollup": "^2.56.2",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "app-root-path": "^3.1.0"
+  }
+}
