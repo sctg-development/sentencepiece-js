@@ -55,7 +55,7 @@ async function main() {
     let cleaned = cleanText(text)
 
     let spp = new SentencePieceProcessor()
-    await spp.lloadFromB64StringModel(llama_3_1_tokeniser_b64);
+    await spp.loadFromB64StringModel(llama_3_1_tokeniser_b64);
     let ids = spp.encodeIds(cleaned)
     console.log(ids)
     let str = spp.decodeIds(ids) // list ids->number
