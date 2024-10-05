@@ -1,6 +1,10 @@
-name: Build with Emscripten
+name: Build with Emscripten and publish to npmjs
 
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -31,4 +35,10 @@ jobs:
         source ./emsdk/emsdk_env.sh
         npm install
         npm run build
+        cp ./test/llama-3.1-tokenizer.model ./dist/llama-3.1-tokenizer.model
+
+    - name: Publish to npmjs registry
+      run: |
+        npm config set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+        npm publish
 
