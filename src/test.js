@@ -1,5 +1,5 @@
-const { SentencePieceProcessor, cleanText, llama_3_1_tokeniser_b64 } = require("../dist");
-const ROOT = require('app-root-path')
+import { SentencePieceProcessor, cleanText, llama_3_1_tokeniser_b64 } from "../dist/index.js";
+import ROOT from 'app-root-path';
 
 async function main() {
 

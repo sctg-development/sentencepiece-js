@@ -47,7 +47,11 @@ main()
 In the browser, you can use the following code:
 
 ```js
+import { Buffer } from "buffer";
 import { SentencePieceProcessor, cleanText, llama_3_1_tokeniser_b64 } from "@sctg/sentencepiece-js";
+
+// eslint-disable-next-line no-undef
+globalThis.Buffer = Buffer;
 // built in models: llama_3_1_tokeniser_b64, clean_30k_b64, smart_b64
 async function main() {
 
@@ -67,7 +71,8 @@ async function main() {
 main()
 ```
 
-## Note
+See https://github.com/sctg-development/ai-outlook/blob/HEAD/src/aipane/aipane.ts#L11-L23 for an example of how to use this in a react app.  
+Look also at webpack.config.js for the configuration of the webpack bundler.
 
 - devilyouwei updated this repo to make this module support the js `require` keyword and added the using example.
 - 2023-1-10, devilyouwei added `encodePieces`.

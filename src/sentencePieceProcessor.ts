@@ -1,4 +1,4 @@
-import Module from "./sentencepiece"
+import createSentencePieceModule from "./sentencepiece.js"
 import * as fs from "fs"
 
 export class SentencePieceProcessor {
@@ -31,7 +31,7 @@ export class SentencePieceProcessor {
     // private function to load model
     private async _loadModel(model: Buffer) {
         const tempName = this.uuidv4() + ".model";
-        this.sentencepiece = await Module();
+        this.sentencepiece = await createSentencePieceModule();
         this.sentencepiece.FS.writeFile(tempName, model);
         const string_view = new this.sentencepiece.StringView(tempName);
         const absl_string_view = string_view.getView();
