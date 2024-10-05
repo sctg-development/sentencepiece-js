@@ -1,6 +1,6 @@
 {
   "name": "@sctg/sentencepiece-js",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Sentencepiece tokenization for natural language processing, JS version.",
   "main": "dist/index.js",
   "exports": {
@@ -11,12 +11,12 @@
     "build": "./build.sh; rollup --config",
     "test": "web-test-runner \"test/**/*.test.js\" \"src/**/*.test.js\" --node-resolve",
     "test:watch": "web-test-runner \"test/**/*.test.js\" \"src/**/*.test.js\" --node-resolve --watch",
-    "develop": "web-dev-server --node-resolve --watch --open"
+    "develop": "web-dev-server --node-resolve --watch --open",
+    "convert_models": "node ./test/convertmodels.js"
   },
   "files": [
     "./dist/index.js",
-    "./dist/index.d.ts",
-    "./dist/llama-3.1-tokenizer.model"
+    "./dist/index.d.ts"
   ],
   "repository": {
     "type": "git",

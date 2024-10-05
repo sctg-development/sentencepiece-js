@@ -6,14 +6,34 @@ export class SentencePieceProcessor {
     processor: any;
     sentencepiece: any;
 
+    uuidv4(): string {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0,
+                v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    // load model from a base64 encoded string
+    async loadFromB64StringModel(b64model: string) {
+        // decode base64 string 
+        const model = Buffer.from(b64model, 'base64');
+        await this._loadModel(model);
+    }
+
     // load model
     async load(url: string) {
+        const model = fs.readFileSync(url);
+        await this._loadModel(model);
+    }
 
+
+    // private function to load model
+    private async _loadModel(model: Buffer) {
+        const tempName = this.uuidv4() + ".model";
         this.sentencepiece = await Module();
-
-        // change to fs read model file
-        this.sentencepiece.FS.writeFile("sentencepiece.model", fs.readFileSync(url));
-        const string_view = new this.sentencepiece.StringView("sentencepiece.model");
+        this.sentencepiece.FS.writeFile(tempName, model);
+        const string_view = new this.sentencepiece.StringView(tempName);
         const absl_string_view = string_view.getView();
 
         this.processor = new this.sentencepiece.SentencePieceProcessor();
@@ -22,9 +42,8 @@ export class SentencePieceProcessor {
         load_status.delete();
         absl_string_view.delete();
         string_view.delete();
-
+        this.sentencepiece.FS.unlink(tempName);
     }
-
 
     encodeIds(text: string) {
 

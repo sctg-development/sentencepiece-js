@@ -18,7 +18,7 @@ yarn build
 
 ## Use
 
-To use this tool
+To use this tool in nodejs, you can use the following code:
 
 ```js
 
@@ -42,6 +42,29 @@ async function main() {
 }
 main()
 
+```
+
+In the browser, you can use the following code:
+
+```js
+import { SentencePieceProcessor, cleanText, llama_3_1_tokeniser_b64 } from "@sctg/sentencepiece-js";
+// built in models: llama_3_1_tokeniser_b64, clean_30k_b64, smart_b64
+async function main() {
+
+    let text = "I am still waiting on my card?"
+    let cleaned = cleanText(text)
+
+    let spp = new SentencePieceProcessor()
+    await spp.lloadFromB64StringModel(llama_3_1_tokeniser_b64);
+    let ids = spp.encodeIds(cleaned)
+    console.log(ids)
+    let str = spp.decodeIds(ids) // list ids->number
+    console.log(str)
+
+    let pieces = spp.encodePieces(cleaned) // list tokens->string
+    console.log(pieces)
+}
+main()
 ```
 
 ## Note
