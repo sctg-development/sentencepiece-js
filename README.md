@@ -1,5 +1,9 @@
 # Javascript wrapper for the sentencepiece library
 
+## Browser demo
+
+On Github Pages you can see Sentencepiece used for counting the token using [Meta Llama 3.1 tokenizer model](https://huggingface.co/spaces/Xanthius/llama-token-counter/blob/main/tokenizer.model) https://sctg-development.github.io/sentencepiece-js/ no data is sent to the server.
+
 ## Build
 
 Sentencepiece is compiled to webassembly using emscripten.
