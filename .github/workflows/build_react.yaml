@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: |
         cd ./tokenCount
-        npm install
+        npm ci
         npm run build
 
     - name: Deploy on GitHub Pages
