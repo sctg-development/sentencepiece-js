@@ -77,7 +77,7 @@ async function main() {
 main()
 ```
 
-See https://github.com/sctg-development/ai-outlook/blob/HEAD/src/aipane/aipane.ts#L11-L23 for an example of how to use this in a react app.  
+See https://github.com/sctg-development/ai-outlook/blob/HEAD/src/aipane/aipane.ts#L12-L34 for an example of how to use this in a react app.  
 Look also at webpack.config.js for the configuration of the webpack bundler.
 
 - devilyouwei updated this repo to make this module support the js `require` keyword and added the using example.
