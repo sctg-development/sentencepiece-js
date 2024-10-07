@@ -89,6 +89,7 @@ function TextAnalyzer() {
           className={styles.textarea}
           textarea={{ className: styles.textareain }}
           appearance="outline"
+          size="small"
           id={textAnalyserId}
           ref={textAreaRef}
           placeholder="Enter text or drop a text file"
@@ -96,7 +97,7 @@ function TextAnalyzer() {
           onChange={(event) => setText(event.target.value)}
         ></Textarea>
       </Field>
-      <Text style={{width:"unset"}} className={styles.result} block>
+      <Text style={{width:"unset"}} className={styles.result} block size={300}>
         <Button
           appearance="primary"
           onClick={calculateTokenCount}

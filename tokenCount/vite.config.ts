@@ -5,4 +5,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/sentencepiece-js/',
   plugins: [react()],
-})
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'sentencepiece-js': ['@sctg/sentencepiece-js'],
+          'fluentui-react-components': ['@fluentui/react-components'],
+        }
+      }
+    }
+  }
+});

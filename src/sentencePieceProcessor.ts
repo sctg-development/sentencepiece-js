@@ -113,6 +113,11 @@ export class SentencePieceProcessor {
     }
 }
 
+/**
+ * Function for cleaning text, removing invalid characters and replacing multiple whitespaces with a single space.
+ * @param text input text
+ * @returns a cleaned text
+ */
 export function cleanText(text: string) {
     const stringBuilder: string[] = [];
     let originalCharIndex = 0, newCharIndex = 0;

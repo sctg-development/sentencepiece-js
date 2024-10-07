@@ -20,7 +20,7 @@ function App() {
   const styles = useStyles();
   return (
     <>
-      <Card className={styles.card} size="large">
+      <Card className={styles.card} size="large" >
         <CardHeader
           header={
             <Body1>

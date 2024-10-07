@@ -4,6 +4,7 @@ import { babel } from "@rollup/plugin-babel";
 import { wasm } from "@rollup/plugin-wasm";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
+import { splitVendorChunkPlugin } from 'vite';
 
 export default [
   {
@@ -16,6 +17,7 @@ export default [
       { file: "dist/index.cjs", format: "cjs" },
     ],
     plugins: [
+      splitVendorChunkPlugin(),
       nodeResolve({ browser: true }),
       commonjs(),
       babel({ babelHelpers: "bundled" }),
