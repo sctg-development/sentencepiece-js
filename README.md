@@ -1,8 +1,13 @@
 # Javascript wrapper for the sentencepiece library
 
-## Browser demo
+![Build React App](https://github.com/sctg-development/sentencepiece-js/actions/workflows/build_react.yaml/badge.svg)
+![Publish to npmjs registry](https://github.com/sctg-development/sentencepiece-js/actions/workflows/build.yaml/badge.svg)
 
-On Github Pages you can see Sentencepiece used for counting the token using [Meta Llama 3.1 tokenizer model](https://huggingface.co/spaces/Xanthius/llama-token-counter/blob/main/tokenizer.model) https://sctg-development.github.io/sentencepiece-js/ no data is sent to the server.
+## Browser Demo
+
+You can see Sentencepiece-js in action for counting and displaying tokens using the [Meta Llama 3.1 tokenizer model](https://huggingface.co/spaces/Xanthius/llama-token-counter/blob/main/tokenizer.model) on GitHub Pages: https://sctg-development.github.io/sentencepiece-js/. All computations are performed in your browser, and no data is sent to the server. To display the tokens, click on the `tokens` link.
+
+This simple React app is located in the `tokenCount` directory of this repository. It is built with React 18, Vite, and the Fluent UI v9 framework.
 
 ## Build
 
