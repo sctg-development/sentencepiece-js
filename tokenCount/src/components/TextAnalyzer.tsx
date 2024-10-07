@@ -7,15 +7,11 @@ import {
   Field,
   Text,
 } from "@fluentui/react-components";
-import { Buffer } from "buffer";
 import {
   SentencePieceProcessor,
   cleanText,
   llama_3_1_tokeniser_b64,
 } from "@sctg/sentencepiece-js";
-
-// eslint-disable-next-line no-undef
-globalThis.Buffer = Buffer;
 
 const useStyles = makeStyles({
   root: {

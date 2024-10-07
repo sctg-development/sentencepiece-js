@@ -17,11 +17,11 @@ To rebuild this project
 
 ```bash
 
-yarn
+npm install
 
 git clone --recurse-submodules  https://github.com/sctg-development/sentencepiece-js.git
 
-yarn build
+npm run build
 
 ```
 
@@ -53,14 +53,11 @@ main()
 
 ```
 
-In the browser, you can use the following code:
+In the browser, you can use the following code (see the `tokenCount` directory for a full example):
 
 ```js
-import { Buffer } from "buffer";
 import { SentencePieceProcessor, cleanText, llama_3_1_tokeniser_b64 } from "@sctg/sentencepiece-js";
 
-// eslint-disable-next-line no-undef
-globalThis.Buffer = Buffer;
 // built in models: llama_3_1_tokeniser_b64, clean_30k_b64, smart_b64
 async function main() {
 
