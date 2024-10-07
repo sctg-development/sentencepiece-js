@@ -10,9 +10,8 @@ import {
 
 const useStyles = makeStyles({
   card: {
-    margin: "auto",
-    width: "720px",
-    maxWidth: "100%",
+    width: "80vw",
+    maxWidth: "1024px",
   },
   footer: {
   },
@@ -21,17 +20,17 @@ function App() {
   const styles = useStyles();
   return (
     <>
-      <Card className={styles.card}>
+      <Card className={styles.card} size="large">
         <CardHeader
           header={
             <Body1>
-              <b>LLama 3.1 Token counter</b>
+              <b>LLama 3.1 Tokenizer and counter</b>
             </Body1>
           }
         />
         <TextAnalyzer />
         <CardFooter className={styles.footer}>
-          <b>Copyright 2024 Ronan Le Meillat</b>
+          <b>Copyright 2024 <a href="https://github.com/sctg-development/sentencepiece-js">Ronan Le Meillat</a></b>
         </CardFooter>
       </Card>
     </>
